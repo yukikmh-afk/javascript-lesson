@@ -164,3 +164,84 @@ user.hello = sayHello;
     変数xが生きていられるのは定義されたスコープの範囲内である関数fooの中のみであるため、
     そのスコープ外でであるconsole.logでは参照できずにエラーが発生する
   */
+
+  /* -------- Java Script 応用編 -------- */
+  /* ------------ /
+  Question.1
+  標準組み込みオブジェクト Math を使用し、0 ~ 9 のランダムな整数をコンソールに出力してください。
+  ------------ */
+  let max = 10;
+  let min = 0;
+  console.log(Math.floor(Math.random() * (max - min) + min));
+
+  /* ------------ /
+  Question.2
+  関数 setTimeout を使用し、3 秒後に以下のようにコンソールに出力してください。
+  Hello World!
+  ------------ */
+  setTimeout(function(){
+    console.log('Hello World!')
+  }, 3000);
+
+  /* ------------ /
+  Question.3
+  変数 num に 任意の数値を代入し、下記条件のもと文字列をコンソールに出し分ける処理を作成してください。
+
+  条件
+  num が 0 より大きければnum is greater than 0
+  num が 0 より小さければnum is less than 0
+  num が 0 であればnum is 0
+  ------------ */
+  let num = 1;
+  let text = '';
+
+  if(num > 0){
+    text = 'num is greater than 0';
+  }
+  else if(num < 0){
+    text = 'num is less than 0';
+  }
+  else{
+    text = 'num is 0'
+  }
+
+  console.log(text);
+
+  /* ------------ /
+  Question.4
+  変数 numbers に空の配列を代入した後、
+  0 ~ 99 までの数字を変数 numbers に全て追加し、
+  値が追加された状態の変数 numbers をコンソールに出力してください
+  ------------ */
+
+  let numbers = [];
+
+  for(let i = 0; i < 100; i++){
+    numbers[i] = i;
+  }
+  console.log(numbers);
+
+  /* ------------ /
+  Question.5
+  以下の変数 mixed から 要素を一つずつ取り出し、下記条件のもと文字列をコンソールに出し分ける処理を作成してください。
+
+  let mixed = [4, '2', 5, '8', '9', 0, 1];
+  条件
+  Number であり偶数の時は even
+  Number であり奇数の時は odd
+  Number 以外の時は not number
+  ------------ */
+  let mixed = [4, '2', 5, '8', '9', 0, 1];
+  for(let i = 0; i < mixed.length; i++){
+    if(typeof mixed[i] === 'number'){
+      if(mixed[i] % 2 === 0){
+        console.log('even');
+      }
+      else{
+        console.log('odd');
+      }
+    }
+    else{
+      console.log('not number');
+    }
+  }
