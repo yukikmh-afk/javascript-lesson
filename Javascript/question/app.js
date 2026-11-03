@@ -65,11 +65,12 @@ console.log(playerList[1].favorites[1]);
   ------------ */
 
   let avg = 0;
+  let sum = 0;
 
   for(let i = 0; i < playerList.length; i++){
-      avg += playerList[i].age;
+      sum += playerList[i].age;
   }
-  avg /= playerList.length;
+  avg = sum / playerList.length;
   console.log(avg);
 
 /* ------------ /
@@ -97,8 +98,11 @@ sayWorld();
   ※ いずれも Q3 で定義した変数 user を直接書き換えないこと
   ------------ */
 
-user.birthday = '2000-09-27';
-user.hello = sayHello;
+  user.birthday = '2000-09-27';
+  user.sayHello = function(){
+    console.log('Hello!');
+  };
+  user.sayHello();
 
 /* ------------ /
   Question.8
@@ -170,9 +174,9 @@ user.hello = sayHello;
   Question.1
   標準組み込みオブジェクト Math を使用し、0 ~ 9 のランダムな整数をコンソールに出力してください。
   ------------ */
-  let max = 10;
+  let max = 9;
   let min = 0;
-  console.log(Math.floor(Math.random() * (max - min) + min));
+  console.log(Math.floor(Math.random() * (max - min + 1) + min));
 
   /* ------------ /
   Question.2
